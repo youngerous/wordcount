@@ -25,6 +25,7 @@ urlpatterns = [
     path('', blog.views.home, name="home"),
     path('blog/', include('blog.urls')), # 앱 폴더별 url 관리
     path('portfolio/', portfolio.views.portfolio, name="portfolio"),
+    path('accounts/', include('accounts.urls')),
 ] 
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

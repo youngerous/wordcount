@@ -33,9 +33,10 @@
                     Dropdown</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{%url 'portfolio'%}">Portfolio</a>
-                            <a class="dropdown-item" href="#">Another action</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Something else here</a>
+                            <a class="dropdown-item" href="{% url 'signup' %}">회원가입</a>
+                            <a class="dropdown-item" href="{% url 'login' %}">로그인</a>
+                            <a class="dropdown-item" href="{% url 'logout' %}">로그아웃</a>
                     </div>
                 </li>
                 <li class="nav-item">
@@ -48,6 +49,16 @@
             </form>
             </div>
         </nav>
+
+        {% if messages %}
+            {% for message in messages %}
+                {% if message.tags == 'success' %}
+                    <div class="p-3 mt-2 mb-2 border border-success text-success rounded">{{ message }} </div>
+                {% else %}
+                    <div class="p-3 mt-2 mb-2 border border-danger text-danger rounded ">{{ message }} </div>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
 
         {% block contents %}
         {% endblock %}
