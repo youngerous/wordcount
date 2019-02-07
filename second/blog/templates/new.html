@@ -1,0 +1,24 @@
+{% extends "base.html"%}
+
+{% block contents %}
+    <div class="container">
+        <form action="{% url 'create' %}"  class="mt-5">
+
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">제목</span>
+                </div>
+                <input name="title" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+            </div>       
+
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">본문</span>
+                </div>
+                <textarea name="body" class="form-control" aria-label="본문"></textarea>
+            </div>       
+
+            <input type="submit" class="btn btn-dark" value="제출">
+        </form>
+    </div>
+{% endblock %}

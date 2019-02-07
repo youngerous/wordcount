@@ -1,0 +1,15 @@
+{% extends "base.html"%}
+
+{% block contents %}
+    {% for blog in blogs.all %}
+        <div class="card border-secondary mt-3 mb-3">
+            <h3 class="card-header"> {{blog.title}} </h2>
+            <div class="card-body">
+                <p class="card-subtitle mb-2 text-muted"> 날짜: {{blog.pub_date}} </p>
+                <div class="badge badge-dark">본문 미리보기</div>
+                <p class="card-text"> {{blog.summary}} </p>
+                <a class="card-link" href="{% url 'detail' blog.id%}">...more</a>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}

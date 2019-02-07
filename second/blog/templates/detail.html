@@ -1,0 +1,13 @@
+{% extends "base.html"%}
+
+{% block contents %}
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">            
+            <div class="lead">
+                <h2> <div class="badge badge-dark">제목</div> {{blog.title}} </h2>
+                <p> <div class="badge badge-dark">작성 날짜</div> {{blog.pub_date}} </p>
+                <p> <div class="badge badge-dark">본문 내용</div> {{blog.body}}</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}
