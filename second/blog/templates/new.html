@@ -1,7 +1,16 @@
 {% extends "base.html"%}
 
 {% block contents %}
-    <div class="container">
+    
+    <form action="" method="POST">
+        {% csrf_token %}
+        <table>
+            {{form.as_table}}
+        </table>
+        <br>
+        <input type="submit" class="btn btn-dark" value="제출">
+    </form>
+    <!-- <div class="container">
         <form action="{% url 'create' %}"  class="mt-5">
 
             <div class="input-group mb-3">
@@ -20,5 +29,5 @@
 
             <input type="submit" class="btn btn-dark" value="제출">
         </form>
-    </div>
+    </div> -->
 {% endblock %}

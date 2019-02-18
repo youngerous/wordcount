@@ -30,6 +30,6 @@ def login(request):
 def logout(request):
     if request.method == 'POST':
         auth.logout(request)
-        # messages.add_message(request, messages.INFO, 'You just logged out!')
+        messages.add_message(request, messages.INFO, 'You just logged out!')
         return redirect('home')
     return render(request, 'login.html')
